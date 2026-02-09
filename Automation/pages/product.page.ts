@@ -23,4 +23,8 @@ export class ProductPage {
   async expectOnProductsPage() {
     await expect(this.page).toHaveURL(/products/);
   }
+
+  async searchEmpty() {
+  await this.page.click('#submit_search');
+}
 }

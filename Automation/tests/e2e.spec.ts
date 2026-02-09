@@ -33,3 +33,15 @@ test('User can search for product and see results', async ({ page }) => {
 
   await product.expectOnProductsPage();
 });
+
+// Edge scenario: validate behavior when search submitted empty
+test('Search with empty input handled correctly', async ({ page }) => {
+
+  const product = new ProductPage(page);
+
+  await product.navigate();
+  await product.searchEmpty();
+
+  await product.expectOnProductsPage();
+
+});
